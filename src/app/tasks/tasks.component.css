@@ -1,0 +1,23 @@
+.item-list {
+    padding-bottom: 20px;
+    padding-left: 35px;
+}
+
+.edit-delete-list {
+    position: relative;
+    top: 45px;
+}
+
+.add-to-today {
+    padding-right: 10px;
+    color: #283593;
+}
+
+.add-to-today:hover {
+    color: #7e349d;
+    cursor: pointer;
+}
+
+.add-task mat-icon:hover {
+    color: #43A047
+}

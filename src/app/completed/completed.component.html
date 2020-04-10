@@ -1,0 +1,60 @@
+<div class="section-list">
+    <div class="header">
+        <img src="../../assets/img/images.jpg" width="100%" height="auto" />
+        <div class="title-section-list">
+            <p>Completed Tasks</p>
+        </div>
+    </div>
+    <div class="all-task" *ngFor="let task of tasks">
+        <div class="row">
+            <div class="col-8">
+                <div class="main-items ">
+                    <div class="item-task">
+                        <p class="title-main-task">{{task.title}}</p>
+
+                        <p class="description-main-task ">{{task.description}}</p>
+
+                        <p class="date-main-task m-0">
+                            <mat-icon class="icon-color " aria-hidden="false " aria-label="date_range ">date_range</mat-icon>
+                            {{task.date | date:"MMM d, y "}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="edit-delete-task">
+                    <a (click)="DeleteTask(task._id)" class="delete-task">
+                        <mat-icon matTooltip="delete" class="icon-color" matTooltipClass="icon-tooltip" aria-hidden="false " aria-label="delete_forever ">delete_forever</mat-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <mat-divider color='red' class="hr "></mat-divider>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Done</th>
+        <th>Date</th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+        <td>
+            {{task.title}}
+        </td>
+        <td>
+            {{task.description}}
+        </td>
+        <td>
+            {{task.done}}
+        </td>
+        <td>
+            {{task.date}}
+        </td>
+        <td>
+            <button (click)="DeleteTask(task._id)">Delete Task</button>
+
+        </td>
+    </tr>
+</table>

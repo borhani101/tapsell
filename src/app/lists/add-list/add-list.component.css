@@ -1,0 +1,12 @@
+.edit-items {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-top: 30px;
+    padding-right: 200px;
+    align-items: baseline;
+}
+
+.icon-color-edit {
+    color: #283593;
+}

@@ -1,0 +1,21 @@
+.item-list {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.edit-delete-list {
+    position: relative;
+    top: 32px;
+}
+
+.item-list a {
+    text-decoration: none;
+}
+
+.item-list a>p:hover {
+    color: #3949AB;
+}
+
+.add-list mat-icon:hover {
+    color: #43A047
+}

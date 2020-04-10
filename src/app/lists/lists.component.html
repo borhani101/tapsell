@@ -1,0 +1,41 @@
+<div class="section-list ">
+    <div class="header ">
+        <img src="../../assets/img/images.jpg " width="100% " height="auto " />
+        <div class="title-section-list ">
+            <p>All List</p>
+
+        </div>
+    </div>
+    <div class="all-task" *ngFor="let list of lists ">
+        <div class="row ">
+            <div class="col-8">
+                <div class="main-items">
+                    <div class="item-list">
+                        <a [routerLink]="[ '/tasks'] " [queryParams]='{id:list._id}' routerLinkActive="Active ">
+                            <p class="title-main-task ">{{list.title}}</p>
+                        </a>
+                        <p class="date-main-task m-0 ">
+                            <mat-icon class="icon-color " aria-hidden="false " aria-label="date_range ">date_range</mat-icon>
+                            {{list.date | date:"MMM d, y "}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="edit-delete-list ">
+                    <a class="edit-task " [routerLink]="['/edit-list']" [queryParams]='{id:list._id}' routerLinkActive="Active ">
+                        <mat-icon matTooltip="edit " class="icon-color " matTooltipClass="icon-tooltip " aria-hidden="false " aria-label="edit ">edit</mat-icon>
+                    </a>
+                    <a (click)="DeleteList(list._id) " class="delete-task ">
+                        <mat-icon matTooltip="delete " class="icon-color " matTooltipClass="icon-tooltip " aria-hidden="false " aria-label="delete_forever ">delete_forever</mat-icon>
+                    </a>
+                    <a class="add-list" [routerLink]="['/add-task']" [queryParams]='{id:list._id}' routerLinkActive="Active ">
+                        <mat-icon matTooltip="add job " class="icon-color " matTooltipClass="icon-tooltip " aria-hidden="false " aria-label="add ">add</mat-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <mat-divider class="hr"></mat-divider>
+    </div>
+
+</div>

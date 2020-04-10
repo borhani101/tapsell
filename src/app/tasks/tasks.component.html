@@ -1,0 +1,49 @@
+<div class="section-list ">
+    <div class="header ">
+        <img src="../../assets/img/images.jpg " width="100% " height="auto " />
+        <div class="title-section-list ">
+            <p>All Tasks</p>
+        </div>
+    </div>
+    <div class="all-task" *ngFor="let task of tasks">
+        <div class="row ">
+            <div class="col-8">
+                <div class="main-items">
+                    <div class="icon-done">
+                        <mat-checkbox [checked]="task.done" color="primary" class="done-task " (click)="DoneTask(task._id) "></mat-checkbox>
+                    </div>
+                    <div class="item-list">
+                        <p [ngClass]="{'doned-line': task.done}" class="title-main-task ">{{task.title}}</p>
+                        <p class="description-main-task ">{{task.description}}</p>
+                        <p class="date-main-task m-0 ">
+                            <mat-icon class="icon-color " aria-hidden="false " aria-label="date_range ">date_range</mat-icon>
+                            {{task.date | date:"MMM d, y "}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="edit-delete-list ">
+                    <a class="edit-task " [routerLink]="['/edit-task']" [queryParams]='{id:task._id}' routerLinkActive="Active ">
+                        <mat-icon matTooltip="edit " class="icon-color " matTooltipClass="icon-tooltip " aria-hidden="false " aria-label="edit ">edit</mat-icon>
+                    </a>
+                    <a (click)="DeleteTask(task._id) " class="delete-task ">
+                        <mat-icon matTooltip="delete " class="icon-color " matTooltipClass="icon-tooltip " aria-hidden="false " aria-label="delete_forever ">delete_forever</mat-icon>
+                    </a>
+                    <a class="add-to-today" (click)="AddToDailyList(task._id) ">
+                        <mat-icon matTooltip="add to today's work list " matTooltipClass="icon-tooltip " aria-hidden="false " aria-label="add ">low_priority</mat-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <mat-divider class="hr"></mat-divider>
+
+    </div>
+    <div class="new-add-task ">
+        <a [routerLink]="[ '/add-task'] " [queryParams]='{id:selectedList._id}' routerLinkActive="Active ">
+            <mat-icon class="icon-color " aria-hidden="false " aria-label="add ">add</mat-icon>
+            <span>Add a new task</span>
+        </a>
+    </div>
+
+</div>

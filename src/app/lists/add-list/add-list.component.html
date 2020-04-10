@@ -1,0 +1,24 @@
+<div class="section-list">
+    <div class="header">
+        <img src="../../assets/img/images.jpg" width="100%" height="auto" />
+        <div class="title-section-list">
+            <p>Add List</p>
+        </div>
+    </div>
+
+    <div class="edit-items">
+        <mat-form-field appearance="legacy" class="title-field">
+            <mat-label>List Title</mat-label>
+            <input matInput placeholder="your title" [(ngModel)]="list.title" required>
+            <mat-icon matSuffix class="icon-color-edit">edit</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="dete-field">
+            <mat-label>Choose a date for list</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="list.date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button (click)="AddList()" class="button-field">OK</button>
+    </div>
+</div>
